@@ -5,12 +5,10 @@
     <parent>
         <groupId>com.wrmsr.neurosis</groupId>
         <artifactId>neurosis-root</artifactId>
-        <version>0.119-SNAPSHOT</version>
+        <version>0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.wrmsr.neurosis</groupId>
     <artifactId>neurosis-aws</artifactId>
-    <description>Presto - AWS</description>
     <packaging>jar</packaging>
 
     <properties>
