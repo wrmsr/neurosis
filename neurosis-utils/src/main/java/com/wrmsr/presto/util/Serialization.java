@@ -19,6 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.DefaultDeserializationContext;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.DefaultSerializerProvider;
+import com.fasterxml.jackson.dataformat.xml.XmlFactory;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.google.common.base.Supplier;
@@ -26,11 +27,18 @@ import com.google.common.base.Suppliers;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 import io.airlift.json.ObjectMapperProvider;
+import io.airlift.slice.Slice;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.ByteArrayInputStream;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.IntStream;
+
+import static com.google.common.collect.Maps.newHashMap;
 
 public class Serialization
 {
@@ -41,13 +49,13 @@ public class Serialization
     // FIXME NOSTATIC
     public static final Supplier<ObjectMapper> OBJECT_MAPPER = Suppliers.memoize(() ->
             new ObjectMapperProvider().get()
-                    .registerModule(new SimpleModule()));
+                    .registerModule(new SimpleModule().addSerializer(Slice.class, new SliceSerializer())));
 
     public static final Supplier<ObjectMapper> JSON_OBJECT_MAPPER = OBJECT_MAPPER;
 
     public static ObjectMapper forkObjectMapper(ObjectMapper mapper, JsonFactory jf)
     {
-        return new ObjectMapper(
+       return new ObjectMapper(
                 jf,
                 (DefaultSerializerProvider) mapper.getSerializerProvider(),
                 (DefaultDeserializationContext) mapper.getDeserializationContext());
