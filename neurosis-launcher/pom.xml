@@ -3,25 +3,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.facebook.presto</groupId>
-        <artifactId>presto-root</artifactId>
+        <groupId>com.wrmsr.neurosis</groupId>
+        <artifactId>neurosis-root</artifactId>
         <version>0.119-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.wrmsr.presto</groupId>
+    <groupId>com.wrmsr.neurosis</groupId>
     <artifactId>neurosis-launcher</artifactId>
     <description>Presto - Launcher</description>
     <packaging>jar</packaging>
 
     <properties>
         <air.main.basedir>${project.parent.basedir}</air.main.basedir>
-        <main-class>com.wrmsr.presto.launcher.PrestoWrapperBootstrap</main-class>
+        <main-class>com.wrmsr.neurosis.launcher.PrestoWrapperBootstrap</main-class>
     </properties>
 
     <dependencies>
 
         <dependency>
-            <groupId>com.wrmsr.presto</groupId>
+            <groupId>com.wrmsr.neurosis</groupId>
             <artifactId>neurosis-utils</artifactId>
             <version>${project.version}</version>
         </dependency>
