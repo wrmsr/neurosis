@@ -1,0 +1,3 @@
+[submodule "neurosis-native/llvm"]
+	path = neurosis-native/llvm
+	url = https://github.com/wrmsr/llvm

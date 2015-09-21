@@ -1,21 +1,1696 @@
-http://www.philippe-fournier-viger.com/spmf/index.php?link=algorithms.php
-https://colah.github.io/posts/2015-08-Understanding-LSTMs/
-http://goertzel.org/monkeyburger/bbm_main.pdf
-http://arxiv.org/pdf/1506.06442v1.pdf
-http://www.mattkeeter.com/projects/contours/
-http://petewarden.com/2015/05/23/why-are-eight-bits-enough-for-deep-neural-networks/
-https://news.ycombinator.com/item?id=10244398
-https://medium.com/rants-on-machine-learning/the-unreasonable-effectiveness-of-random-forests-f33c3ce28883
-https://news.ycombinator.com/item?id=10242489
-http://www.msr-waypoint.com/pubs/71445/ForestFire.pdf
-http://blog.ayoungprogrammer.com/2015/09/a-simple-artificial-intelligence.html
-https://news.ycombinator.com/item?id=10238387
-http://mldb.ai/
-http://www.cs.rit.edu/~ark/pj2.shtml
-http://blogs.mathworks.com/loren/2015/08/04/artificial-neural-networks-for-beginners/
-https://colah.github.io/posts/2015-09-NN-Types-FP/
-http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/
-http://www.technologyreview.com/view/541276/deep-learning-machine-teaches-itself-chess-in-72-hours-plays-at-international-master/
-https://research.facebook.com/blog/1642778845966521/inferring-algorithmic-patterns-with-stack/
+http://www.tpc.org/tpc_documents_current_versions/pdf/tpch2.17.1.pdf
 
 
+
+
+auto jdbc partitioning
+further jdbc predicate pushdown
+ - composite pk scrolling :|
+jdbc aggregate pushdown
+yarn
+ - http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/WritingYarnApplications.html
+(python) ffi
+event sources
+random access stores
+first layer caching
+vitess shit
+nashorn stored procs
+salesforce connector?
+hbase plz
+
+local fs / hive configurator
+
+https://www.simba.com/data-access/apache-drill-data-sources-file-types
+SELECT name1[‘nestedname1’][‘nestednestedname1’] FROM <schema>.<filename>.json
+
+tachyon temp spilling
+sorted [leveldb] join storage
+
+schema tracker interface
+carbide's full ddl parser impl
+service impl
+
+yaml config + velocity templating
+
+BLOOM FILTER PREDICATE PUSHDOWN
+ - naw temp tables - engine=memory, index(), pk
+ - no, TEMP TABLES :D engine=memory, pk clustered + indices
+
+move kafka decoder to base?
+ - no, allow cross-plugin dep, recursive plugin loading
+  - dag?
+
+necessary for chunked operation:
+bounded in-clause pushdown
+occasional join pushdown
+view inlining
+
+connector capability enumeration
+ - crud
+ - complex tuple domains
+  - joins, bitwise
+  - nested disjuncts?
+
+whitebox / blackbox plugins?
+
+
+rbr tailing
+integrate carbide ddl parser to directly modify metadata (WOW)
+
+
+nested types? subtables? disjoint? untyped?
+
+
+collection aggregates (windows? subselects? typed?)
+
+
+presto decoder = generic connector wrapper, given a bytes col or single col
+ - support for disjoints ala dot-separated column names
+ - col regexes? select r(x.*)?
+ - schema validation
+ - + ffi = http plugin?
+
+wrmsr-packaging? bootstrap?
+ - full shading
+ - JAVA_HOME
+
+jython
+ - a fucking sqlalchemy connector why not
+
+mvel
+java
+jsr223 artifact resolver?
+bulk funcs
+
+http://qubole-eng.quora.com/Caching-in-Presto
+
+
+** make wrapper hierarchical poms like hadoop does, one per shaded subdep
+
+https://github.com/apache/hadoop-common/tree/trunk/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-applications-distributedshell/src/main/java/org/apache/hadoop/yarn/applications/distributedshell
+
+https://github.com/shyiko/mysql-binlog-connector-java
+https://github.com/addthis/stream-lib
+
+http://blog.sonatype.com/2008/04/how-to-share-resources-across-projects-in-maven/
+
+<dependency>
+    <groupId>org.rocksdb</groupId>
+    <artifactId>rocksdbjni</artifactId>
+    <version>3.10.1</version>
+</dependency>
+
+REDSHIFT
+
+eek need on-board views
+
+https://github.com/rcongiu/Hive-JSON-Serde
+https://github.com/FasterXML/jackson-dataformat-avro
+https://github.com/FasterXML/jackson-datatype-hppc
+https://github.com/FasterXML/jackson-dataformat-yaml
+
+https://github.com/facebook/presto/pull/2896
+
+https://cwiki.apache.org/confluence/display/Hive/Tutorial
+https://cwiki.apache.org/confluence/display/Hive/Home
+
+
+* dumb flat json file output
+ - complicated by clustering, can just dump to dirs with uuid names as write-only
+
+
+prepared statements / plan caching
+
+
+
+constants?
+ - can impl cheap via fns that just return a #, can transform to literals via MH lookup or iface introspection or something
+
+https://github.com/wrmsr/presto-streaming omfg
+
+
+bitwise operators
+hash algs
+
+
+
+http://jyni.org/
+
+streams + sqs + gearman
+
+https://github.com/johnewart/gearman-java
+
+
+
+
+lucene analysis scalars
+
+
+https://github.com/elastic/elasticsearch-hadoop
+https://github.com/elastic/stream2es
+https://github.com/elastic/elasticsearch-aws
+
+
+es bulk by length
+https://github.com/elastic/elasticsearch-hadoop/tree/master/mr/src/main/java/org/elasticsearch/hadoop
+https://github.com/elastic/elasticsearch-hadoop/tree/master/hive/src/main/java/org/elasticsearch/hadoop/hive
+https://github.com/elastic/elasticsearch-hadoop/tree/master/yarn
+
+https://github.com/elastic/elasticsearch-cloud-gce
+
+
+https://github.com/searchbox-io/Jest/tree/master/jest
+
+
+https://developer.salesforce.com/page/Streaming_API
+http://www.salesforce.com/us/developer/docs/api_rest/index_Left.htm#StartTopic=Content/quickstart.htm
+
+
+parameterized views [indexer generators]
+
+
+
+https://mariadb.com/kb/en/mariadb/optimization-and-tuning/
+http://phoenix.apache.org/
+
+
+
+
+
+https://github.com/facebook/presto/pull/2896
+
+https://commons.apache.org/proper/commons-configuration/userguide/howto_utilities.html
+
+
+
+
+https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-Built-inTable-GeneratingFunctions(UDTF)
+
+
+wrapper will dedupe unshaded jars, write nested classloader
+- http://one-jar.sourceforge.net/
+
+rsync powered jarsync bash/py script pls
+
+
+decoder predicate pushdown to capable stores lols
+
+
+split on scalar fn
+
+00000000: 2321 2f62 696e 2f73 680a 0a65 7865 6320  #!/bin/sh..exec
+00000010: 6a61 7661 202d 586d 7831 4720 2d6a 6172  java -Xmx1G -jar
+00000020: 2022 2430 2220 2224 4022 0a0a 504b 0304   "$0" "$@"..PK..
+
+
+
+    @Override
+    public CompletableFuture<List<ConnectorSplit>> getNextBatch(int maxSize)
+    {
+        return targets.getNextBatch(maxSize).thenApply(l -> l.stream().map(this::split).collect(Collectors.toList()));
+    }
+
+
+** CHUNK JDBC RETRIEVAL
+multi-queries? (dependent partitions)
+
+
+custom mysql / postgres jdbc? wrmsr-mysql / wrmsr/-postgres?
+ - for more efficient multi-sessioning?
+  - ideally keep jdbc agnostic
+
+json extraction to unnest
+
+scalar jackson serdes, ideally strongly typeable
+
+
+src / sink for line files, one text column
+ - ffi page sink, post directly to somewhere?
+
+scalar calc parallelization (for cpu-heavy ffi's)
+ - special case of batch scalar execution?
+
+
+http://dev.mysql.com/doc/connector-j/en/connector-j-usagenotes-j2ee-concepts-managing-load-balanced-connections.html
+
+https://github.com/facebook/mysql-5.6/commit/f8e361952612d00979f7cf744f487e48b15cb5a6#diff-1b7266575f084a759d5bee343efe91d0
+http://www.oracle.com/technetwork/articles/database-performance/geist-parallel-execution-1-1872400.html
+
+
+flat:
+ - \n, \0, fixedwidth
+ - filename regex, string formatted filename
+
+TODO:
+ - decoder meta vs unnested extractors :| perf?
+ - layered connectors of same schemas as fallbacks (memcache -> mysql)
+ - attempt oracle jdbc driver loading
+  - fuck that its not in central lmfao eat shit
+ - indexer & partitioner metas
+
+ffi to arbitrary jar / classname / methodname
+ - + src / sinks
+
+
+reactor
+yarn
+ - mesos?
+
+um, shit: struct / union datatypes - only need to be write-only, can fallback to json
+ - ... RowParametricType?
+
+select struct('name', name', 'date', date) from ...
+ - just make user defined structs :|
+
+view struct inference / auto gen
+ - session-specific typesystems?
+
+
+spark-style stupid jdbc baked query sources
+spark-style cache wrapper (for like json files)
+
+
+redshift:
+ - http://docs.aws.amazon.com/redshift/latest/dg/c_redshift_system_overview.html
+ - will DEF need (math) agg pushdown lols
+ - http://docs.aws.amazon.com/redshift/latest/mgmt/configuring-connections.html#connecting-drivers
+ - http://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html wtf also not in fucking central jfc
+  - at least you dont have to fucking sign in
+  https://s3.amazonaws.com/redshift-downloads/drivers/RedshiftJDBC41-1.1.1.0001.jar
+
+https://github.com/liquibase/liquibase/tree/master/liquibase-core/src/main/java/liquibase
+
+https://orainternals.files.wordpress.com/2008/07/riyaj_redo_internals_and_tuning_by_redo_reduction_doc.pdf
+http://docs.oracle.com/cd/B28359_01/server.111/b28322/gen_rep.htm#STREP011
+
+union connector
+ - step 1 just so you dont have to keep typing the fucking catalog.schema. prefix
+ - step 2 optinoally combine tables in both if they have same schema
+  - naw thats just a fucking union view
+
+
+hardcoded:
+ - views
+  - types
+ - tables
+
+
+
+public class CachingConnectorMetadata
+    implements ConnectorMetadata
+
+temporary connector equiv to hardcoded - views + tables
+ - naw just an h2 factory that auto-creates a temp schema
+
+generate views upon request - is this macros?
+
+
+
+cfg'd in-mem | master thrift port'd hive metastore
+
+autoexec's
+
+
+http://stackoverflow.com/questions/10929369/how-to-execute-multiple-sql-statements-from-java
+
+try to get a hierarchical subconfig, then try to get a str
+
+memcache is kV only, see what Cass does
+
+dense key ranges only
+
+unpickling?
+
+handlersocket + all that intermediate agg shit
+
+https://github.com/dropbox/PyHive
+
+user defined types via ROW types (w/ named fields)
+ struct_extract(field_name, obj) -> val
+ auto-gen structs for services based on schemas
+ https://github.com/swagger-api/swagger-codegen
+ https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md
+
+cfg:
+ properties
+ json
+ xml
+ yaml
+
+decode:
+ raw
+ struct
+ json
+ csv
+ xml
+ yaml
+ avro
+ csv/tsv/piped
+ cbor
+ smile
+ pickle
+
+lines
+datetimes
+deep
+
+http://basho.com/why-vector-clocks-are-hard/
+http://basho.com/why-vector-clocks-are-easy/
+http://phoenix.apache.org/update_statistics.html
+http://en.wikipedia.org/wiki/Behavior_Trees
+http://www.cs.man.ac.uk/~norm/papers/surveys.pdf
+
+http://game.itu.dk/cig2010/proceedings/papers/cig10_015_075.pdf
+
+
+exception handling for bad data :|
+ - shit that wont decompress, bad json, etc
+
+
+            ArchiveInputStream input = new ArchiveStreamFactory()
+                    .createArchiveInputStream(originalInput);
+
+
+record-level connector cache for configs in sqlite and shit
+ - convert to scalar for hash lookups?
+  - .... just cache the hash join guts?
+
+CAN REPRESENT TYPE-LEVEL CONSTS AS DATALESS TYPES
+ compressed_varbinary<bzip>
+ could possibly represent gzipped file of json lines as a type, unnest for rows
+ jackson<json> -> some_struct
+ peanos lols
+
+
+
+need eager wrapper on lazy defaults for compression streams
+
+https://prestodb.io/docs/current/connector/kafka-tutorial.html
+https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-core-types.html
+
+
+
+https://github.com/FasterXML/jackson-module-swagger
+ - needs fork + update
+
+set type?
+ - just a Map<K, Void>
+  - ... so Void type
+   - subclassable for typelevel constants
+
+
+<dependency>
+    <groupId>com.jcraft</groupId>
+    <artifactId>jsch</artifactId>
+    <version>0.1.53</version>
+</dependency>
+
+<dependency>
+    <groupId>net.razorvine</groupId>
+    <artifactId>pyrolite</artifactId>
+    <version>4.6</version>
+</dependency>
+
+
+
+https://github.com/RGBz/aws-s3-class-loader
+https://github.com/sampov2/onejar-maven-plugin
+
+
+<dependency>
+    <groupId>org.rocksdb</groupId>
+    <artifactId>rocksdbjni</artifactId>
+    <version>3.9.1</version>
+</dependency>
+
+
+    // setFetchSize(Integer.MIN_VALUE) is a mysql driver specific way to force streaming results,
+    // rather than pulling entire resultset into memory.
+    // see http://dev.mysql.com/doc/refman/5.0/en/connector-j-reference-implementation-notes.html
+    if (conn.getMetaData.getURL.matches("jdbc:mysql:.*")) {
+      stmt.setFetchSize(Integer.MIN_VALUE)
+      logInfo("statement fetch size set to: " + stmt.getFetchSize + " to force MySQL streaming ")
+    }
+
+
+types expose funcs w same name that return new instances
+execute hardcoded jdbc connectors with where 0=1 if cols not specified
+multijvm support to bypass heap size limits
+
+
+
+***
+just implement a flat raptor StorageEngine, wrap with encoder
+
+
+http://stackoverflow.com/questions/15524995/adding-another-projects-jar-as-a-resource-using-maven
+
+
+immediate priorities: codecs, raw raptor storage, spilling, join ordering, bitwise scalar funcs (or, and, xor)
+
+
+http://www.adellera.it/blog/category/materialized-views/
+http://www.adellera.it/blog/2013/04/22/fast-refresh-of-outer-join-only-materialized-views-algorithm-part-1/
+
+
+HLists? HNode + HNil?
+
+gson?
+ http://www.doublecloud.org/2015/03/gson-vs-jackson-which-to-use-for-json-in-java/
+
+
+https://github.com/facebook/presto/pull/3016 :D
+https://github.com/facebook/presto/pull/1937
+https://github.com/facebook/presto/pull/3021
+
+
+<dependency>
+    <groupId>redis.clients</groupId>
+    <artifactId>jedis</artifactId>
+    <version>2.7.2</version>
+</dependency>
+
+<dependency>
+    <groupId>net.spy</groupId>
+    <artifactId>spymemcached</artifactId>
+    <version>2.12.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.ow2.sat4j</groupId>
+    <artifactId>org.ow2.sat4j.core</artifactId>
+    <version>2.3.5</version>
+</dependency>
+
+
+https://github.com/yesmeck/jquery-jsonview
+
+
+com.facebook.presto.operator.PagesIndex <--- DISK SPILL
+
+
+** NEED TO PUT FAT ROWS LAST. (review text)
+
+
+on rows:
+ - pack fixed
+ - pack many into blocks of N - compressssssion
+  - just a special case of array/map?
+   - row_array? :p
+
+http://www.datastax.com/dev/blog/advanced-time-series-with-cassandra
+https://academy.datastax.com/demos/getting-started-time-series-data-modeling
+http://www.tpc.org/tpc_documents_current_versions/pdf/tpch2.17.1.pdf
+riak crdt's
+https://github.com/FasterXML/jackson-module-swagger
+https://github.com/swagger-api/swagger-core/blob/master/pom.xml
+http://mesos.apache.org/api/latest/java/
+http://docs.oracle.com/cd/B19306_01/server.102/b14220/transact.htm
+http://docs.oracle.com/cd/B28359_01/server.111/b28310/onlineredo001.htm#ADMIN11302
+http://ss64.com/ora/syntax-redo.html
+http://www.pgcon.org/2012/schedule/attachments/258_212_Internals%20Of%20PostgreSQL%20Wal.pdf
+https://hackage.haskell.org/package/HList
+https://wiki.haskell.org/Heterogenous_collections
+http://okmij.org/ftp/Haskell/HList-ext.pdf
+http://www.csee.umbc.edu/courses/undergraduate/202/spring07/Lectures/ChangSynopses/modules/m25-hlist/HList.cpp
+https://en.wikipedia.org/wiki/Java_bytecode_instruction_listings
+https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html
+https://www.elastic.co/blog/es-hadoop-2-1-rc1-released
+
+user defined type aliases? parser type literal limitation bypass?
+
+http://mesos.apache.org/api/latest/java/org/apache/mesos/Scheduler.html
+https://github.com/apache/mesos/blob/master/src/examples/java/TestFramework.java
+
+
+find java 8 shebang, exec with minimal heap, spawn child w flock and die
+
+create type atom_state as enum (
+	'committing',
+	'committed',
+	'compensating',
+	'compensated'
+);
+
+create sequence atom_id;
+
+create table atom (
+	id int unique not null,
+
+	root_id int not null references atom (id) on delete restrict,
+	parent_id int references atom (id) on delete restrict,
+	prev_sibling_id int references atom (id) on delete restrict,
+	active_child_id int references atom (id) on delete restrict,
+
+	primary key (root_id, id),
+
+	time_created timestamp not null default now(),
+	user_created name not null default current_user,
+	time_updated timestamp not null default now(),
+	user_updated name not null default current_user,
+
+	ttl_absolute interval,
+	deadline_absolute timestamp,
+	ttl_relative interval,
+	deadline_relative timestamp,
+
+	is_faulted boolean not null default false,
+	fault_info text,
+
+	state atom_state not null default 'committing',
+	compensation_attempts int not null default 0,
+
+	input text,
+	context text,
+	output text,
+
+	constraint self_root_no_parent_check check ((id = root_id) = (parent_id is null)),
+	constraint no_output_without_input_check check (not (output is not null and input is null)),
+	constraint no_children_with_input_check check
+		(not (active_child_id is not null and input is not null)),
+
+	constraint no_absolute_deadline_if_not_committing_check check
+		(not (deadline_absolute is not null and state != 'committing')),
+	constraint no_relative_deadline_if_not_committing_check check
+		(not (deadline_relative is not null and state != 'committing'))
+);
+
+create type atom_log_action as enum (
+	'insert',
+	'update'
+);
+
+create sequence atom_log_id;
+
+create table atom_log (
+	log_id int unique,
+	log_action atom_log_action not null,
+
+	like atom,
+
+	primary key (root_id, log_id),
+
+	constraint root_id_fk foreign key (root_id) references atom (id) match full on delete cascade
+);
+
+
+
+private MinimalPerfectHashing() {
+}
+
+public static class Data {
+
+    public int[] gs;
+    public int[] vs;
+
+    public Data(int[] gs, int[] vs) {
+        this.gs = gs;
+        this.vs = vs;
+    }
+}
+
+public static interface Hasher <K> {
+
+    public long hash(int d, K key);
+}
+
+// Computes a minimal perfect hash table using the given python dictionary. It
+// returns a tuple (G, V). G and V are both arrays. G contains the intermediate
+// table of values needed to compute the index of the value in V. V contains the
+// values of the dictionary.
+// Source: http://stevehanov.ca/blog/index.php?id=119
+// TODO(wtimoney): disk-back this.
+public static <K> Data create(Map<K, Integer> dct, Hasher<K> hasher) {
+    assert dct.size() > 0;
+
+    int size = dct.size();
+
+    // Step 1: Place all of the keys into buckets
+    @SuppressWarnings("unchecked")
+    List<K>[] buckets = new List[size];
+    for (int i = 0; i < size; ++i)
+        buckets[i] = new ArrayList<>();
+    int[] gs = new int[size];
+    Integer[] vs = new Integer[size];
+
+    for (K key : dct.keySet())
+        buckets[(int) (hasher.hash(0, key) % size)].add(key);
+
+    // Step 2: Sort the buckets and process the ones with the most items first.
+    Arrays.sort(buckets, new Comparator<List<K>>() {
+        @Override
+        public int compare(List<K> strings, List<K> strings2) {
+            return strings2.size() - strings.size();
+        }
+    });
+
+    int b = 0;
+    for (; b < size; ++b) {
+        List<K> bucket = buckets[b];
+        if (bucket.size() <= 1)
+            break;
+
+        int d = 1;
+        int item = 0;
+        List<Integer> slots = new ArrayList<>();
+
+        // Repeatedly try different values of d until we find a hash function
+        // that places all items in the bucket into free slots
+        while (item < bucket.size()) {
+            int slot = (int) (hasher.hash(d, bucket.get(item)) % size);
+
+            if (vs[slot] != null || slots.contains(slot)) {
+                d += 1;
+                item = 0;
+                slots = new ArrayList<>();
+            } else {
+                slots.add(slot);
+                item += 1;
+            }
+        }
+
+        gs[(int) (hasher.hash(0, bucket.get(0)) % size)] = d;
+
+        for (int i = 0; i < bucket.size(); ++i)
+            vs[slots.get(i)] = dct.get(bucket.get(i));
+    }
+
+    // Only buckets with 1 item remain. Process them more quickly by directly
+    // placing them into a free slot. Use a negative value of d to indicate
+    // this.
+    List<Integer> freelist = new ArrayList<>();
+    for (int i = 0; i < size; ++i)
+        if (vs[i] == null)
+            freelist.add(i);
+
+    for (; b < size; ++b) {
+        List<K> bucket = buckets[b];
+        if (bucket.size() == 0)
+            break;
+
+        int slot = freelist.remove(freelist.size() - 1);
+
+        // We subtract one to ensure it's negative even if the zeroeth slot was
+        // used.
+        gs[(int) (hasher.hash(0, bucket.get(0)) % size)] = -slot - 1;
+
+        vs[slot] = dct.get(bucket.get(0));
+    }
+
+    int[] vsa = new int[vs.length];
+    for (int i = 0; i < vs.length; ++i)
+        vsa[i] = vs[i];
+
+    return new Data(gs, vsa);
+}
+
+// Look up a value in the hash table, defined by G and V.
+public static <K> int lookup(int[] gs, int[] vs, K key, Hasher<K> hasher) {
+    int d = gs[(int) (hasher.hash(0, key) % gs.length)];
+
+    if (d < 0)
+        return vs[-d - 1];
+
+    return vs[(int) (hasher.hash(d, key) % vs.length)];
+}
+
+public static <K> void verify(int[] gs, int[] vs, Map<K, Integer> dct, Hasher<K> hasher) {
+    for (Map.Entry<K, Integer> e : dct.entrySet()) {
+        K k = e.getKey();
+        int v = e.getValue();
+        int v_ = lookup(gs, vs, k, hasher);
+
+        if (v != v_)
+            throw new IllegalStateException(); // ValueError((k, v, v_))
+    }
+}
+
+private static final long FNV_32_KEY = 0x01000193L;
+
+// Calculates a distinct hash function for a given string. Each value of the
+// integer d results in a different hash value.
+public static long fnv32Hash(long d, byte[] b) {
+    if (d == 0)
+        d = FNV_32_KEY;
+
+    // Use the FNV algorithm from http://isthe.com/chongo/tech/comp/fnv/
+    for (int i = 0; i < b.length; ++i) {
+        byte c = b[i];
+        d = ((d * FNV_32_KEY) ^ c) & 0xffffffffL;
+    }
+
+    return d;
+}
+
+public static Hasher<String> FNV_32_STRING_HASHER = new Hasher<String>() {
+    @Override
+    public long hash(int d, String key) {
+        return fnv32Hash(d, key.getBytes());
+    }
+};
+
+
+
+memcached cachedump
+
+
+http://stackoverflow.com/a/2946402 > http://docs.oracle.com/javase/8/docs/api/javax/tools/JavaCompiler.html
+
+msgpack
+bson
+
+schema inference :/
+
+
+chronicle !
+
+serialize, serialize_raw
+
+
+https://en.wikipedia.org/wiki/EAR_(file_format)
+
+
+raptor > https://github.com/mpetazzoni/ttorrent
+https://github.com/JorenSix/TarsosLSH well hello.
+
+**** represent tables themselves as scalar values to be unnested? gzip<table<json<lucy_document>>> ....
+ - subclass of array
+
+
+** switch to autoexec-ing void sql functions style for cfg setup
+defstruct cmd, connect cmd, ...
+
+http://codefutures.com/mesos-docker-tutorial-how-to-build-your-own-framework/
+
+<dependency>
+    <groupId>org.apache.derby</groupId>
+    <artifactId>derby</artifactId>
+    <version>10.11.1.1</version>
+</dependency>
+
+https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode
+https://svn.apache.org/repos/asf/hive/branches/branch-0.6/conf/hive-default.xml
+http://www.cloudera.com/content/cloudera/en/documentation/archives/cdh3/v3u6/CDH3-Installation-Guide/cdh3ig_topic_16_3.html
+http://www.cloudera.com/content/cloudera/en/documentation/cdh4/v4-2-0/CDH4-Installation-Guide/cdh4ig_topic_18_4.html
+https://www.elastic.co/blog/elasticsearch-for-apache-hadoop-2-1-spark-storm-and-more
+
+start stop run status mesos yarn cli
+
+find jdk dl link lel
+restart kill
+docker aware, find oracle j8 Dockerfile
+
+wrapper config aware, yelpify dockerism in there
+https://github.com/dockerfile/java/blob/master/oracle-java8/Dockerfile
+
+
+
+http://ruedigermoeller.github.io/kontraktor/
+https://blog.twitter.com/2015/flying-faster-with-twitter-heron
+
+https://crate.io/overview/
+
+https://github.com/sheepkiller/presto-marathon-docker
+
+https://code.facebook.com/posts/745068642270222/fighting-spam-with-haskell/
+
+http://rayli.net/blog/data/top-10-data-mining-algorithms-in-plain-english/
+http://www.infoq.com/articles/The-OpenJDK9-Revised-Java-Memory-Model
+https://medium.com/@mustwin/cassandra-from-a-relational-world-7bbdb0a9f1d
+http://json-schema.org/latest/json-schema-core.html#anchor8
+http://lasp-lang.org/
+http://basho.com/posts/technical/where-to-start-with-riak-core/
+http://www.slideshare.net/denshikarasu/all-your-iops-are-belong-to-us-a-pinteresting-case-study-in-mysql-performance-optimization
+
+
+http://www.bailis.org/blog/when-is-acid-acid-rarely/
+http://research.microsoft.com/en-us/people/philbe/ccontrol.aspx
+http://www.cse.iitb.ac.in/dbms/Data/Courses/CS632/2009/Papers/p492-fekete.pdf
+http://shivaram.org/publications/presto-eurosys13.pdf
+http://shivaram.org/publications/presto-hotcloud12.pdf
+http://research.microsoft.com/pubs/201100/naiad_sosp2013.pdf
+http://www.cs.cornell.edu/courses/cs6452/2012sp/papers/psi-sosp11.pdf
+http://www.bailis.org/blog/understanding-weak-isolation-is-a-serious-problem/
+http://www.bailis.org/papers/ca-vldb2015.pdf
+http://www.bailis.org/ in general
+
+http://www.qubole.com/blog/product/caching-presto/
+
+http://voltdb.com/products/featuresbenefits/reasons-behind-voltdb-architecture
+
+
+http://spark.apache.org/docs/latest/mllib-guide.html
+http://spark.apache.org/docs/latest/graphx-programming-guide.html
+
+http://www.h2database.com/html/advanced.html
+
+https://wiki.postgresql.org/wiki/Serializable
+
+https://github.com/JCTools/JCTools
+
+gon need curator / zk for state storage
+
+
+
+via http://mesos.apache.org/documentation/latest/docker-containerizer/
+ > attach jar and cfg as commandinfo files, override entrypoint to point to jar :D
+jarsync self-update and restart endpoint for cluster, jardiff own jar
+may also be nice to build docker images w/ deps in ~/.m2/repository, more idiomatic at least
+ > but requires private repository
+
+
+batched update mode? equiv to lazy de/re-jsoning done by ei partial aggs?
+ - pulsed/stepped at a regular interval? pipelined at a depth of max joins? (which = execution pipeline itself)
+
+hash join operator -> cassandra
+ - or rather kv:x
+
+favor imperative config, include / exec / eval files / text from disk / sql sources
+ - lacking loops should get cfg via jsr223 up
+
+async / background query execution ala bash & / fg, both interactive in cli and scriptable
+
+for paasta can just run as adhoc in context of another service, node disco can go through zk
+oo and how about a raw mode powered by just jsch, aws disco aware
+
+
+
+<dependency>
+    <groupId>org.apache.curator</groupId>
+    <artifactId>apache-curator</artifactId>
+    <version>2.8.0</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.curator</groupId>
+    <artifactId>curator-framework</artifactId>
+    <version>2.8.0</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.curator</groupId>
+    <artifactId>curator-recipes</artifactId>
+    <version>2.8.0</version>
+</dependency>
+
+
+http://storagemojo.com/2015/06/29/the-storage-tipping-point/
+http://jmoiron.net/blog/thoughts-on-timeseries-databases/
+
+cache invalidator probes for mat-view engine ala cacheserv
+
+jar url plugin loading (for shades)
+
+just install jdk in shebang lols
+cfg cmds must run on ALL NODES, make sure cfg does that
+make sure node dont take queries till cfg'd
+
+fuck it raw lucene connector
+
+https://github.com/eirslett/frontend-maven-plugin
+
+
+https://registry.hub.docker.com/u/cloudesire/java/tags/manage/
+https://registry.hub.docker.com/u/isuper/java-oracle/dockerfile/
+https://github.com/docker/docker/issues/3778#issuecomment-88208709
+
+postgres brin
+
+https://github.com/twitter/scrooge
+
+acidy materialization by honoring gtid alignment of events and propagating to final store only when at a txn boundary
+ .. where possible ofc
+
+biject structs and schemas (avro, swagger, ...)
+pojos/beans for structs for ffi
+
+
+https://github.com/jenkinsci/ssh-plugin/blob/master/pom.xml#L32 well hellooooo
+
+
+package org.apache.hadoop.hive.ql.processors;
+CommandProcessorFactory
+
+package org.apache.hadoop.hive.metastore;
+public class HiveMetaStore extends ThriftHiveMetastore {
+  public static void main(String[] args) throws Throwable {
+
+select hive_exec('catalog_name', 'create table ....');
+
+
+so, uh, limit propagation...
+
+make it ssh to grab fresh s3 keys lols
+
+*** codegen for imperative retrieval of opted-out or non-reactive tables
+
+table aliases, imperative / service tables, DAG for view validation, ...
+
+JGIT INTEGRATION FOR MANAGING REPOS OF INCLUDES
+
+write throttling for daytime - could just be for final store not intermediate store
+
+
+omg bloom filter / bitvector generator aggregate, exportable for use in py
+ - partially updating by events :D
+https://issues.jenkins-ci.org/browse/JENKINS-20276
+
+
+
+http://www.sqlstyle.guide/
+
+<dependency>
+    <groupId>org.functionaljava</groupId>
+    <artifactId>functionaljava</artifactId>
+    <version>4.4</version>
+</dependency>
+<dependency>
+    <groupId>org.functionaljava</groupId>
+    <artifactId>functionaljava-java8</artifactId>
+    <version>4.4</version>
+</dependency>
+
+:p
+
+https://github.com/aol/cyclops
+hm.
+
+
+with/without provided preimage
+postimage can be retrieved albeit leakily
+
+
+create table out.business (id int primary key, name varchar) as
+select id, name from in.business;
+
+business.insert > insert into out.business (id, name) values (new.id, new.name);
+business.update > update out.business set out.business.id = new.id, out.business.name = new.name where out.business.id = old.business.id;
+business.delete > delete from out.business where out.business.id = old.id;
+
+
+
+
+create table out.review (id int primary key, comment varchar, business_id int, business_name varchar) as
+select in.review.id, in.review.comment, in.business.id, in.business.name
+from in.review
+inner join in.business on in.business.id = in.review.business_id;
+
+???
+
+business.insert > insert into out.business (id, name) values (new.id, new.name);
+business.update > update out.business set out.business.id = new.id, out.business.name = new.name where out.business.id = old.business.id;
+business.delete > delete from out.business where out.business.id = old.id;
+
+
+
+CRUD by pk
+
+
+
+es connector
+https://github.com/facebook/presto/pull/3240/commits
+
+https://github.com/facebook/presto/pull/2896
+
+
+https://gist.github.com/wrmsr/c2f8a91499da3b4b2cf2
+https://github.com/garnaat/missingcloud
+https://github.com/powdahound/ec2instances.info/blob/master/www/instances.json
+https://a0.awsstatic.com/pricing/1/deprecated/ec2/linux-od.json
+http://www.ec2instances.info/
+
+
+
+
+
+
+namenode 'org.apache.hadoop.hdfs.server.namenode.NameNode'
+zkfc 'org.apache.hadoop.hdfs.tools.DFSZKFailoverController'
+secondarynamenode 'org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode'
+datanode 'org.apache.hadoop.hdfs.server.datanode.DataNode'
+journalnode 'org.apache.hadoop.hdfs.qjournal.server.JournalNode'
+dfs org.apache.hadoop.fs.FsShell
+dfsadmin org.apache.hadoop.hdfs.tools.DFSAdmin
+haadmin org.apache.hadoop.hdfs.tools.DFSHAAdmin
+fsck org.apache.hadoop.hdfs.tools.DFSck
+balancer org.apache.hadoop.hdfs.server.balancer.Balancer
+mover org.apache.hadoop.hdfs.server.mover.Mover
+storagepolicies org.apache.hadoop.hdfs.tools.GetStoragePolicies
+jmxget org.apache.hadoop.hdfs.tools.JMXGet
+oiv org.apache.hadoop.hdfs.tools.offlineImageViewer.OfflineImageViewerPB
+oiv_legacy org.apache.hadoop.hdfs.tools.offlineImageViewer.OfflineImageViewer
+oev org.apache.hadoop.hdfs.tools.offlineEditsViewer.OfflineEditsViewer
+fetchdt org.apache.hadoop.hdfs.tools.DelegationTokenFetcher
+getconf org.apache.hadoop.hdfs.tools.GetConf
+groups org.apache.hadoop.hdfs.tools.GetGroups
+snapshotDiff org.apache.hadoop.hdfs.tools.snapshot.SnapshotDiff
+lsSnapshottableDir org.apache.hadoop.hdfs.tools.snapshot.LsSnapshottableDir
+portmap org.apache.hadoop.portmap.Portmap
+nfs3 org.apache.hadoop.hdfs.nfs.nfs3.Nfs3
+cacheadmin org.apache.hadoop.hdfs.tools.CacheAdmin
+crypto org.apache.hadoop.hdfs.tools.CryptoAdmin
+version org.apache.hadoop.util.VersionInfo
+
+
+
+user defined enums?
+
+
+
+2015-08-04T17:38:23.227-0700    INFO    Thread-1        com.facebook.presto.server.PluginManager        -- Loading plugin |presto-mysql --
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGBUS (0xa) at pc=0x0000000108be4eb9, pid=31431, tid=36103
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_51-b16) (build 1.8.0_51-b16)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.51-b03 mixed mode bsd-amd64 compressed oops)
+# Problematic frame:
+# C  [libzip.dylib+0x2eb9]  newEntry+0x154
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# An error report file with more information is saved as:
+# /Users/wtimoney/src/wrmsr/presto/hs_err_pid31431.log
+Compiled method (nm)    7244  178     n 0       java.util.zip.ZipFile::getEntry (native)
+ total in heap  [0x000000010add6e90,0x000000010add71f0] = 864
+ relocation     [0x000000010add6fb8,0x000000010add6ff8] = 64
+ main code      [0x000000010add7000,0x000000010add71f0] = 496
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+[1]    31431 abort      ~/presto/presto run
+
+super.
+
+
+
+base jdbc commit batch size hardcoded 1k ruh roh
+
+
+
+https://github.com/softwarevidal/mysql-connector-mxj-gpl haaaaaay
+
+https://bugs.openjdk.java.net/browse/JDK-8017777
+
+Is this another case where the application is re-writing a zip file that is in use? This can be worked around by running with the system property sun.zip.disableMemoryMapping set to true.
+
+
+rlimit: STACK 8192k, CORE 0k, NPROC 709, NOFILE 10240, AS infinity
+https://stackoverflow.com/questions/19447444/fatal-errors-from-openjdk-when-running-fresh-jar-files
+
+
+wget -c --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "https://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.tar.gz" --output-document="jdk-8u60-linux-x64.tar.gz"
+
+8u60-b27
+
+ehehehe
+
+
+deploy via instance tags
+
+
+
+stupid simple fs connector for interactive shit, select name from s3 where path = '/some/dir/*'
+
+** when reexecing set proc title with args, unavailable to ps at launch
+
+https://www.percona.com/blog/2012/01/25/how-to-recover-a-single-innodb-table-from-a-full-backup/
+
+https://www.percona.com/doc/percona-server/5.5/management/innodb_expand_import.html
+
+
+
+instance tags: Name, creator (username), owner (team)
+
+
+
+
+https://zookeeper.apache.org/doc/trunk/zookeeperReconfig.html
+
+https://aws.amazon.com/blogs/aws/new-ec2-spot-instance-termination-notices/
+
+ec2-launch ec2-run, upload to master, distribute from master, clone jdk detection in java
+
+find or dl and install jdk, optional force upgrade
+sync jar
+launch, master or slave as appropriate
+
+oh shit yeah ec2-profiles, don't need to retype
+
+
+^in cfg yaml ofc.
+
+
+non-spot master, spot slaves....
+
+
+https://software.intel.com/en-us/articles/intel-performance-counter-monitor ehehehee
+
+
+
+aws emr create-cluster --name "Test cluster" --ami-version 3.3 \
+--applications Name=Hue Name=Hive Name=Pig Name=HBase \
+--use-default-roles --ec2-attributes KeyName=myKey \
+--instance-type c1.xlarge --instance-count 3 --termination-protected
+
+http://169.254.169.254/latest/user-data
+
+http://docs.datastax.com/en/cassandra/2.2/cassandra/install/installAMILaunch.html
+
+com.mysql.jdbc.ReplicationDriver
+
+.aws/credentials
+
+
+create external table my_stuff (id string, prev_id string, uri string, extra string) partitioned by (dt string)
+ row format serde 'com.amazon.elasticmapreduce.JsonSerde' with serdeproperties ('paths'='id, prev_id, url, extra');
+alter table my_ranger add partition (dt='small') location 's3://yelp-emr-dev/foo/';
+
+https://github.com/apache/hive/blob/ac755ebe26361a4647d53db2a28500f71697b276/ql/src/java/org/apache/hadoop/hive/ql/udf/UDFParseUrl.java
+
+
+https://github.com/confluentinc/bottledwater-pg yay
+
+https://github.com/mpetazzoni/ttorrent/blob/master/cli/src/main/java/com/turn/ttorrent/cli/TorrentMain.java
+
+
+IT ISNT THE TABLES THAT ARE COMPRESSED IT IS THE FILES. SPLITS OR PARTITIONS.
+in that sense yes it is an unnest of rows from n files
+no omfg not COMPRESSED<bzip, ... ---- bzip<lines<json<business>>>
+
+
+
+  archive)
+    CLASS=org.apache.hadoop.tools.HadoopArchives
+    hadoop_debug "Injecting TOOL_PATH into CLASSPATH"
+    hadoop_add_classpath "${TOOL_PATH}"
+  ;;
+
+    CLASS=org.apache.hadoop.fs.FsShell
+
+class S3(BasicCommand):
+    NAME = 's3'
+    DESCRIPTION = BasicCommand.FROM_FILE('s3/_concepts.rst')
+    SYNOPSIS = "aws s3 <Command> [<Arg> ...]"
+    SUBCOMMANDS = [
+        {'name': 'ls', 'command_class': ListCommand},
+        {'name': 'website', 'command_class': WebsiteCommand},
+        {'name': 'cp', 'command_class': CpCommand},
+        {'name': 'mv', 'command_class': MvCommand},
+        {'name': 'rm', 'command_class': RmCommand},
+        {'name': 'sync', 'command_class': SyncCommand},
+        {'name': 'mb', 'command_class': MbCommand},
+        {'name': 'rb', 'command_class': RbCommand}
+    ]
+
+
+
+http://java-performance.info/oracle-java-mission-control-overview/
+https://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html#Main_Attributes
+http://www.bittorrent.org/beps/bep_0005.html
+
+
+https://zookeeper.apache.org/doc/trunk/zookeeperReconfig.html
+
+
+
+https://stackoverflow.com/questions/6851461/java-why-does-ssl-handshake-give-could-not-generate-dh-keypair-exception#comment51748700_18254095
+
+
+https://dzone.com/articles/peter-lawrey-on-varhandle-in-jdk9-making-data-in-j :D
+http://vanillajava.blogspot.com/
+https://github.com/OpenHFT/Chronicle-Engine
+
+
+https://svn.apache.org/viewvc/lucene/dev/trunk/lucene/sandbox/src/java/org/apache/lucene/rangetree/RangeTreeWriter.java?view=markup
+well hellooo
+
+https://hdrhistogram.github.io/HdrHistogram/ wat
+
+
+
+aws: profiles: {}
+hadoop: ...
+mesos: ...
+wrapper: clusters: ... [ip's, master, ...]
+
+
+new cluster cmd w ssh, scp, etc
+Cluster cfg, host cfg, some kind of default + override sys
+Host, ssh port, node ports, is master, username, PW or ident,
+ec2 + emr + uh mrj compute pool clusters?
+hehhh hdfs cluster setup + admin
+raptor diag
+could actually leave hdfs subprocesses running between updates, would need its own pidfile doe
+config file merging - order of ops for autoexec? maybe hocon has something relevant? multiple --- yaml docs?
+assess shared machine vs dedicated / virtualized machine, adj heap accordingly, overridable ofc
+spun up cluster keygen on master ala spark
+
+ssh subprocess fallback
+
+default to presto.yaml | presto.json if not given a -c
+
+cmds: hive hdfs ec2 s3
+? yarn emr
+
+sigbus is probs repo deleteOnExit firing before finalizers or some shit run or something, death pact cleaner bash child proc would probs do it
+ - will need to open each file individually, just listen on stdin and open shit
+ bash -c 'while IFS= read -r FILE; do exec {FD}<"$FILE" 2>/dev/null; done'
+
+uh graphql? wat
+
+
+
+
+<dependency>
+    <groupId>org.nd4j</groupId>
+    <artifactId>nd4j-jblas</artifactId>
+    <version>0.0.3.5.5.4-SNAPSHOT</version>
+</dependency>
+
+https://jclouds.apache.org/
+ - LOL NOPE GUICE3
+
+
+
+
+un fixme dont fucking provided dep launcher from hadoop and mesos and aws holy fuck look at dem deps
+
+todo its still fucking pathetic to bundle all of hive just for metastore maint... jackson -> thrift pls :[
+
+https://github.com/facebook/presto/issues/3441 fuq
+https://github.com/facebook/presto/issues/2960
+
+
+https://bitbucket.org/atlassian/jgit-flow/wiki/Home sup
+
+
+https://github.com/zendesk/open-replicator
+https://github.com/zendesk/maxwell lolol
+
+    <dependency>
+    	<groupId>net.snaq</groupId>
+    	<artifactId>dbpool</artifactId>
+    	<version>7.0-jdk7</version>
+    </dependency>
+
+
+http://javaskeleton.blogspot.com/2010/07/avoiding-peer-not-authenticated-with.html bluhhh
+
+https://developer.zendesk.com/blog/introducing-maxwell-a-mysql-to-kafka-binlog-processor
+http://ruby-doc.org/stdlib-1.9.3/libdoc/drb/rdoc/DRb.html
+
+
+var fields = {
+    'date' : Date
+    , 'host' : String
+    , 'process_name' : String
+    , 'pid' : parseInt
+    , 'client_ip' : String
+    , 'client_port' : parseInt
+    , 'accept_date' : Date
+    , 'frontend_name' : String
+    , 'backend_name' : String
+    , 'server_name' : String
+    , 'tq' : parseInt
+    , 'tw' : parseInt
+    , 'tc' : parseInt
+    , 'tr' : parseInt
+    , 'tt' : parseInt
+    , 'status_code' : String
+    , 'bytes_read' : parseInt
+    , 'captured_request_cookie' : String
+    , 'captured_response_cookie' : String
+    , 'terminiation_state' : String
+    , 'actconn' : parseInt
+    , 'feconn' : parseInt
+    , 'beconn' : parseInt
+    , 'srv_conn' : parseInt
+    , 'retries' : parseInt
+    , 'srv_queue' : parseInt
+    , 'backend_queue' : parseInt
+//  , 'requestHeaders'
+//  , 'responseHeaders'
+    , 'method' : String
+    , 'request' : String
+    , 'version' : String
+};
+
+var reg = /^(\w+ \d+ \S+) (\S+) (\S+)\[(\d+)\]: (\S+):(\d+) \[(\S+)\] (\S+) (\S+)\/(\S+) (\S+)\/(\S+)\/(\S+)\/(\S+)\/(\S+) (\S+) (\S+) *(\S+) (\S+) (\S+) (\S+)\/(\S+)\/(\S+)\/(\S+)\/(\S+) (\S+)\/(\S+) "(\S+) ([^"]+) (\S+)" *$/gi
+    , obj
+    , matches
+    ;
+
+
+muh https://github.com/thekrakken/java-grok
+
+https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html
+
+http://danlinstedt.com/allposts/datavaultcat/bigdata-nosql-and-datavault-2-0/ meh
+https://engineering.pinterest.com/blog/sharding-pinterest-how-we-scaled-our-mysql-fleet/
+
+
+https://github.com/logstash-plugins/logstash-patterns-core/tree/master/patterns
+https://github.com/logstash-plugins/logstash-filter-useragent/blob/master/lib/logstash/filters/useragent.rb
+https://github.com/logstash-plugins/logstash-filter-urldecode/blob/master/lib/logstash/filters/urldecode.rb
+https://github.com/logstash-plugins/logstash-filter-tld/blob/master/lib/logstash/filters/tld.rb lols nice docstring
+https://github.com/logstash-plugins/logstash-filter-syslog_pri/blob/master/lib/logstash/filters/syslog_pri.rb
+https://github.com/zipizap/ouilookup/blob/master/ouilookup.rb
+https://github.com/logstash-plugins/logstash-filter-geoip/blob/master/lib/logstash/filters/geoip.rb
+date/time/span parsing
+https://github.com/logstash-plugins/logstash-filter-dns/blob/master/lib/logstash/filters/dns.rb
+https://github.com/logstash-plugins/logstash-filter-cidr/blob/master/lib/logstash/filters/cidr.rb
+
+
+http://www.jayway.com/2014/05/28/using-rxjava-to-monitor-hystrix-streams/
+https://dtai.cs.kuleuven.be/CP4IM/miningzinc
+
+https://commons.apache.org/proper/commons-math/apidocs/org/apache/commons/math3/transform/FastFourierTransformer.html sup
+
+
+https://stackoverflow.com/questions/13734646/how-to-connect-to-java-instances-running-on-ec2-using-jmx ughhh
+http://rkuzmik.blogspot.com/2006/08/local-managed-dns-java_11.html fml
+
+
+https://docs.oracle.com/javase/7/docs/technotes/guides/net/properties.html
+-Dsun.net.spi.nameservice.provider.1=dns,local
+
+
+FIXME -server lols
+
+
+    public static final String IPv4_SETTING = "java.net.preferIPv4Stack";
+    public static final String IPv6_SETTING = "java.net.preferIPv6Addresses";
+
+https://github.com/elastic/elasticsearch/blob/master/core/src/main/java/org/elasticsearch/common/network/NetworkUtils.java
+
+
+mosh --ssh="ssh -i wtimoney_dev.pem" ec2-user@
+
+
+export TERM=screen
+echo 'export TERM=screen' >> ~/.bashrc
+sudo bash -c 'echo 127.0.0.1 `hostname` >> /etc/hosts'
+sudo yum update -y
+wget -c --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "https://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.tar.gz" --output-document="jdk-8u60-linux-x64.tar.gz"
+tar xvzf jdk-8u60-linux-x64.tar.gz
+sudo yum install -y htop tcpdump iotop tmux mtr mosh
+wget http://pkgs.repoforge.org/iftop/iftop-0.17-1.el6.rf.x86_64.rpm
+sudo rpm -ivh iftop-0.17-1.el6.rf.x86_64.rpm
+pip install --user ipython
+
+gcc gcc-c++ :|
+
+
+~/jdk1.8.0_60/bin/java -Xmx32G -XX:+UseConcMarkSweepGC -server -jar ./presto/presto run
+
+http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-ec2-config.html
+
+c4.8xl = 100 MB/s
+
+m4.10xl = 100 MB/s
+m4.4xl = 105 MB/s
+m4.2xl = 60 MB/s
+m4.xl = 28 MB/s ?
+
+m3.2xl = 46 MB/s
+m3.m = shit
+
+i2.8xl = 100 MB/s
+
+r3.8xl = 100 MB/s
+
+d2.8xl = 70 MB/s (cross region)
+
+
+
+https://github.com/logstash-plugins/logstash-patterns-core
+
+http://antisp.in/2014/04/01/useful-logstash-grok-patterns/
+
+
+http://stratosphere.eu/assets/papers/TopologyInferenceEnd2End_11.pdf
+http://stratosphere.eu/assets/papers/CloudTopology_11.pdf
+
+
+
+m4's + c4's ebs-only, future = i2's + d2's only non-ebs - options:
+ - spin up mix of i's for storage and c's / m's for compute
+  - possibly wastes potential bw
+ - run all i's
+ - just go straight ramdisk
+  - maybe tachyon > hdfs here? puniverse galaxy?
+  - uh, would it be better to just make raptor do this natively to Unsafe malloc'd mem?
+   - yes.
+   - does raptor do replication for datasets significantly smaller than cluster ram?
+
+omg https://docs.oracle.com/javase/7/docs/technotes/guides/io/fsp/filesystemprovider.html
+https://github.com/google/jimfs https://github.com/google/jimfs https://github.com/google/jimfs https://github.com/google/jimfs
+https://s-media-cache-ak0.pinimg.com/originals/b2/8a/3a/b28a3a52ee99399a5389e758f7de87b6.gif
+https://commons.apache.org/proper/commons-vfs/
+http://www.rationaljava.com/2015/03/chroniclemap-java-architecture-with-off.html
+https://github.com/marschall/memoryfilesystem
+http://mechanical-sympathy.blogspot.com/2012/10/compact-off-heap-structurestuples-in.html
+https://terracotta.org/generated/4.3.0/html/bmg-all/index.html#page/BigMemory_Go_Documentation_Set/co-tiers_configuring_offheap_store.html
+https://en.wikipedia.org/wiki/Ehcache eh (lol)
+
+https://github.com/damiencarol/jsr203-hadoop
+
+http://insights.wired.com/profiles/blogs/hadoop-100x-faster-how-we-did-it-2#axzz3k3aNMeca meh?
+
+
+**** setting a file to read-only will compact it, after which ByteBuffers are untranslated
+ - use slices obv
+ - make RegularFile take a blockSize override
+ - since dealing with variable size blocks just use malloc, huge page alignment is irrelevant given no disk
+ - mlock ofc
+
+
+
+http://www.infoq.com/news/2007/11/oniguruma-joni-jruby
+https://github.com/google/re2j
+
+
+https://en.wikipedia.org/wiki/CUDA_Pinned_memory
+https://lightsighter.github.io/CudaDMA/
+https://developer.nvidia.com/gpudirect
+
+
+
+https://github.com/torvalds/linux/blob/master/Documentation/networking/ixgbevf.txt haaaay
+https://github.com/torvalds/linux/blob/de182468d1bb726198abaab315820542425270b7/drivers/net/ethernet/intel/ixgbevf/ixgbevf_main.c
+
+
+
+https://stackoverflow.com/questions/3333959/mapping-dma-buffers-to-userspace
+http://forums.xilinx.com/xlnx/attachments/xlnx/ELINUX/10693/1/Linux%20DMA%20from%20User%20Space-public.pdf
+
+
+https://www-ssl.intel.com/content/dam/www/public/us/en/documents/datasheets/82599-10-gbe-controller-datasheet.pdf
+https://www.phoronix.com/scan.php?page=news_item&px=NVIDIA-Nouveau-CUDA-Support
+what happens when i just pretend to be tcp but am actually very much not
+https://en.wikipedia.org/wiki/IEEE_802.1Q
+
+
+just fucking embed antlr fuck it
+
+https://software.intel.com/en-us/protected-download/328018/326559/step2
+-std=c++0x
+
+
+http://www.brendangregg.com/blog/2014-09-15/the-msrs-of-ec2.html
+
+
+http://yusufonlinux.blogspot.com/2010/11/data-link-access-and-zero-copy.html
+
+include/linux/dma-mapping.h
+Documentation/DMA-API.txt
+
+
+https://blog.bramp.net/post/2015/08/27/unsafe-part-3-benchmarking-a-java-unsafearraylist/
+http://antirez.com/news/92
+https://github.com/jnode/jnode/tree/master/net
+http://linuxgazette.net/156/jangir.html
+http://www.jopdesign.com/ejip/
+
+
+
+http://www.thoughts-on-java.org/weekly/
+http://zeroturnaround.com/rebellabs/java-memory-model-pragmatics-by-aleksey-shipilev/
+https://github.com/dell-oss/Doradus
+http://strataconf.com/big-data-conference-ca-2015/public/schedule/detail/38276
+http://blog.aquameta.com/2015/08/28/introducing-aquameta/
+
+.... jcache
+https://jcp.org/en/jsr/detail?id=107
+https://github.com/ehcache/ehcache3
+https://github.com/ehcache/ehcache-jcaGche
+https://github.com/ehcache/sizeof
+https://github.com/Terracotta-OSS/offheap-store
+https://github.com/Terracotta-OSS/statistics
+https://github.com/Terracotta-OSS/cache-load-tester
+https://github.com/Terracotta-OSS/geocache
+
+https://github.com/toelen/spymemcached-jcache
+
+
+
+https://github.com/nayuki/Arithmetic-Coding
+http://www.data-compression.info/Algorithms/AC/
+ - loooooooool
+https://github.com/ramenhut/abac
+
+https://github.com/jsr107/RI
+
+http://www.infoq.com/news/2011/10/java-data-grid hm sup
+
+https://aturon.github.io/blog/2015/08/27/epoch/
+
+
+The big difference between ORC and DWRF is DWRF has a encoding called “row-group dictionary”.  This adds a second dictionary to a column that only applies to the current row group (10k rows).  This can reduce the compressed size of a column when the column has too many unique values for a global dictionary, but not so many unique values that a dictionary is useless.  There are some places where this is a big win.  The downside is complexity in the encoder and decoder.
+
+
+https://github.com/facebook/presto/issues/3435
+http://docs.treasuredata.com/articles/presto-udfs
+
+https://github.com/wyukawa/yanagishima
+
+https://groups.google.com/forum/#!topic/presto-users/jzRa_fDIwKE
+
+http://www.meetup.com/hadoopsf/events/223638704/
+http://www.meetup.com/AWS-SANFRANCISCO/events/224902500/
+
+
+
+create table dst as select id pk, txt from src;
+
+on insert
+ insert into dst values after.id, after.txt;
+ conflict = warn? die? configurable?
+
+on update
+ pk resolution
+ ... updates...
+ generate pre/post img, recurse.......
+
+on delete
+ delete from dst where dst.id = before.id;
+ missing = same
+
+fan in / fan out // aggregate / join
+
+INDEPENDENT STAGES
+exchange?
+existing machinery wo last trier ordering?
+
+
+
+https://github.com/qubole/presto-udfs/tree/master/src
+https://github.com/qubole/presto-kinesis
+
+
+https://github.com/mauricio/postgresql-async
+
+
+ok fuck jcache - 1.0.0 v 0.5 v cache-ri-common fuck off get your shit together
+
+
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
+            <version>0.5</version>
+        </dependency>
+
+ughhhh
+https://github.com/ehcache/ehcache-jcache
+https://github.com/dbrimley/jcache-examples
+
+
+jenkins Java/JNR ssh-agent
+
+https://archive.org/details/db2000-07-12
+https://archive.org/details/db2000-06-27.flac16
+https://archive.org/details/db1999-05-15.shnf
+:3333
+
+
+https://github.com/frankmcsherry/differential-dataflow
+xlat piles to pure j via props
+http://arxiv.org/abs/1508.06791
+oh yeah cli tabular presentation
+https://github.com/RaphaelJ/master-thesis/raw/master/thesis.pdf
+Boosting Java performance using GPGPU [pdf]
+http://arxiv.org/abs/1508.06791
+https://web.archive.org/web/20070709194542/http://www.codeproject.com/system/soviet_kernel_hack.asp memries
+https://github.com/mirror/reactos/blob/c6d2b35ffc91e09f50dfb214ea58237509329d6b/reactos/hal/halx86/apic/apic.c#L8 hahaha
+
+http://falsinsoft.blogspot.com/2013/10/access-physical-memory-in-linux.html BAHAHAHAHAHAHAAHAHAHAH
+
+so raptor = http://tinyurl.com/raptorrrr
+https://stackoverflow.com/questions/1629605/getting-user-inside-shell-script-when-running-with-sudo
+https://wiki.postgresql.org/wiki/PGStrom
+https://bitbucket.org/nikratio/s3ql
+https://www.cs.virginia.edu/kim/publicity/pldi09tutorials/memory-efficient-java-tutorial.pdf
+https://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/
+http://ctrl-c.club/~ksikka/articles/01-berkeley-db/
+http://blog.nobugware.com/post/2015/leveldb_geohash_golang/
+http://newsroom.intel.com/community/intel_newsroom/blog/2015/06/12/chip-shot-custom-intel-xeon-sever-chip-boost-cloud-processing-power-for-amazon-web-services-customers?wapkw=e5-2676
+https://www-ssl.intel.com/content/www/us/en/processors/xeon/xeon-e5-brief.html
+
+lol mmap /dev/mem make jnr structs for descriptor entries
+ - bonus points for making jnr translate the addrs for me
+
+https://stackoverflow.com/questions/18298097/escalating-to-ring-0-in-linux-application
+http://slashdot.org/story/00/07/20/1440204/answers-from-planet-tux-ingo-molnar-responds
+https://people.redhat.com/~mingo/TUX-patches/tux3-2.6.18-1
+http://www.fenrus.demon.nl/
+/dev/mem PROT_READ|PROT_WRITE, MAP_ANON|MAP_PRIVATE|MAP_NORESERVEM
+ share?
+rez the sigscanner lol
+
+http://dev.yorhel.nl/doc/easyipc
+https://www-ssl.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-manual-325462.pdf @ 1949
+
+https://github.com/jcjohnson/neural-style
+http://www.infoq.com/articles/Tuning-Java-Servers
+https://github.com/jemalloc/jemalloc/releases/tag/4.0.0
+https://github.com/simongog/sdsl-lite
+
+
+http://derekmolloy.ie/writing-a-linux-kernel-module-part-1-introduction/
+http://derekmolloy.ie/writing-a-linux-kernel-module-part-2-a-character-device/
+http://derekmolloy.ie/kernel-gpio-programming-buttons-and-leds/
+
+
+starr -> misc_register
+ - god damn sysexit - easy do do whole-core or whole-system :|
+http://stackoverflow.com/a/13585364
+
+https://github.com/krka/kahlua2
+
+https://github.com/dell-oss/Doradus
+
+
+[root@ip-10-40-14-217 ~]# grep CONFIG_STRICT_DEVMEM /boot/config-3.14.48-33.39.amzn1.x86_64
+CONFIG_STRICT_DEVMEM=y
+
+yum groupinstall "Development Tools" ; yum install ncurses-devel hmaccalc zlib-devel binutils-devel elfutils-libelf-devel kernel-devel.x86_64
+sudo yum install kernel-devel-$(uname -r)
+
+sudo yumdownloader --source kernel
+
+
+
+sudo apt-get build-dep linux-image-$(uname -r)
+apt-get source linux-image-$(uname -r)
+cd linux-$(uname -r)
+
+fakeroot debian/rules clean
+fakeroot debian/rules binary-headers binary-generic
