@@ -17,6 +17,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
 import com.google.common.collect.Sets;
 import com.wrmsr.nativity.util.ByteTrie;
+import io.airlift.log.Logger;
 import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
@@ -31,7 +32,7 @@ import java.util.Set;
 
 public class App
 {
-    private static final Logger logger = LoggerFactory.getLogger(App.class);
+    private static final Logger logger = Logger.get(App.class);
 
     public static void main(String[] args)
             throws Exception
