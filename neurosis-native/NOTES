@@ -1,3 +1,9 @@
+brew instal llvm --with-clang
+
+https://github.com/trolldbois/ctypeslib
+https://github.com/wheeler-microfluidics/clang_helpers
+
+
 plan of attack:
  - patch libc syscall instrs to int80 equivs
  - soviet iret
@@ -207,3 +213,11 @@ http://llvm.org/docs/tutorial/LangImpl4.html
 
 https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol
 http://www.linuxfoundation.org/collaborate/workgroups/networking/netem
+
+
+https://github.com/cea-sec/miasm
+https://software.intel.com/en-us/blogs/2013/09/18/processor-tracing
+https://github.com/pybee/voc
+
+http://eli.thegreenplace.net/2011/07/03/parsing-c-in-python-with-clang
+
