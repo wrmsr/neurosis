@@ -23,20 +23,7 @@
 
         <dependency>
             <groupId>com.wrmsr.neurosis</groupId>
-            <artifactId>neurosis-server</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.wrmsr.neurosis</groupId>
             <artifactId>neurosis-aws</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.wrmsr.neurosis</groupId>
-            <artifactId>neurosis-hadoop</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>

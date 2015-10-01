@@ -1,4 +1,4 @@
-brew instal llvm --with-clang
+brew install llvm --with-clang
 
 https://github.com/trolldbois/ctypeslib
 https://github.com/wheeler-microfluidics/clang_helpers

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+    MVN=./mvnw
+else
+    MVN=mvn
+fi
+"$MVN" -T 1C clean package install -Denforcer.skip=true -Dmaven.test.skip=true -Dmdep.skip=true -Dmdep.analyze.skip=true -DignoreNonCompile=true -Dlicense.skip=true -Dair.check.skip-all=true -e -Dair.check.skip-checkstyle=true -Dair.check.skip-license=true
+"$MVN" -pl neurosis-launcher-builder exec:java -Denforcer.skip=true -Dmaven.test.skip=true -Dmdep.skip=true -Dmdep.analyze.skip=true -DignoreNonCompile=true -Dlicense.skip=true -Dair.check.skip-all=true -e -Dair.check.skip-checkstyle=true -Dair.check.skip-license=true
