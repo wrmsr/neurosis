@@ -11,7 +11,6 @@
 
     <groupId>com.wrmsr.neurosis</groupId>
     <artifactId>neurosis-launcher-builder</artifactId>
-    <description>Presto - Launcher Builder</description>
     <packaging>pom</packaging>
 
     <properties>

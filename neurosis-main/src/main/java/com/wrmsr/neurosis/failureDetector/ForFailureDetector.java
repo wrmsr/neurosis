@@ -11,12 +11,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wrmsr.neurosis;
+package com.wrmsr.neurosis.failureDetector;
 
-public class App
+import com.google.inject.BindingAnnotation;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+
+import static java.lang.annotation.ElementType.FIELD;
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.ElementType.PARAMETER;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
+@Retention(RUNTIME)
+@Target({FIELD, PARAMETER, METHOD})
+@BindingAnnotation
+public @interface ForFailureDetector
 {
-    public static void main(String[] args)
-    {
-        System.out.println("Hello World!");
-    }
 }

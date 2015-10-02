@@ -11,17 +11,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wrmsr.neurosis;
+package com.wrmsr.neurosis.discovery;
 
-import org.testng.annotations.Test;
+import io.airlift.configuration.Config;
 
-import static org.testng.Assert.assertTrue;
-
-public class AppTest
+public class EmbeddedDiscoveryConfig
 {
-    @Test
-    public void testApp()
+    private boolean enabled;
+
+    public boolean isEnabled()
     {
-        assertTrue(true);
+        return enabled;
+    }
+
+    @Config("discovery-server.enabled")
+    public EmbeddedDiscoveryConfig setEnabled(boolean enabled)
+    {
+        this.enabled = enabled;
+        return this;
     }
 }
