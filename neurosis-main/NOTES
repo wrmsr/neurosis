@@ -1,174 +1,89 @@
-http://www.philippe-fournier-viger.com/spmf/index.php?link=algorithms.php
-https://colah.github.io/posts/2015-08-Understanding-LSTMs/
-http://goertzel.org/monkeyburger/bbm_main.pdf
-http://arxiv.org/pdf/1506.06442v1.pdf
-http://www.mattkeeter.com/projects/contours/
-http://petewarden.com/2015/05/23/why-are-eight-bits-enough-for-deep-neural-networks/
-https://news.ycombinator.com/item?id=10244398
-https://medium.com/rants-on-machine-learning/the-unreasonable-effectiveness-of-random-forests-f33c3ce28883
-https://news.ycombinator.com/item?id=10242489
-http://www.msr-waypoint.com/pubs/71445/ForestFire.pdf
-http://blog.ayoungprogrammer.com/2015/09/a-simple-artificial-intelligence.html
-https://news.ycombinator.com/item?id=10238387
-http://mldb.ai/
-http://www.cs.rit.edu/~ark/pj2.shtml
-http://blogs.mathworks.com/loren/2015/08/04/artificial-neural-networks-for-beginners/
-https://colah.github.io/posts/2015-09-NN-Types-FP/
-http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/
-http://www.technologyreview.com/view/541276/deep-learning-machine-teaches-itself-chess-in-72-hours-plays-at-international-master/
-https://research.facebook.com/blog/1642778845966521/inferring-algorithmic-patterns-with-stack/
 
 
 
-http://neupy.com/2015/09/21/password_recovery.html
-https://www.netbsd.org/gallery/presentations/dennis/2015_AsiaBSDCon/BSDNet.pdf
-https://www.reddit.com/r/Futurology/comments/3mkjvk/deep_learning_reveals_unexpected_genetic_roots_of/
-http://phys.org/news/2015-09-scientists-human-genome.html
-http://www.wired.com/2015/09/war-genome-editing-just-got-lot-interesting/?mbid=social_twitter
-https://research.facebook.com/publications/695244360582147/fast-convolutional-nets-with-fbfft-a-gpu-performance-evaluation/
-https://danielrapp.github.io/cnn-gol/
-http://www.pnas.org/content/112/37/11732.long#aff-1
+	public static interface LibJava {
 
+/*
+struct JNIInvokeInterface_ {
+    void *reserved0;
+    void *reserved1;
+    void *reserved2;
 
+    jint (JNICALL *DestroyJavaVM)(JavaVM *vm);
 
-https://github.com/mindreframer/golang-devops-stuff
-http://www.w3.org/Protocols/rfc2616/rfc2616.html
+    jint (JNICALL *AttachCurrentThread)(JavaVM *vm, void **penv, void *args);
 
-http://www.personal.psu.edu/vui1/publications.html
-http://arxiv.org/abs/1511.00083
+    jint (JNICALL *DetachCurrentThread)(JavaVM *vm);
 
-http://yahoohadoop.tumblr.com/post/129872361846/large-scale-distributed-deep-learning-on-hadoop
-http://arxiv.org/pdf/1502.06172v1.pdf
-http://arxiv.org/pdf/1502.06173v1.pdf
-http://www.personal.psu.edu/vui1/papers/Giusti-Itskov-2014.pdf
-http://www.personal.psu.edu/vui1/papers/NECO_2013_Curto-Degeratu-Itskov.pdf
+    jint (JNICALL *GetEnv)(JavaVM *vm, void **penv, jint version);
 
-http://arxiv.org/pdf/1511.06278v1.pdf
-http://webdocs.cs.ualberta.ca/~cdavid/pdf/ecgg15_chapter-rts_ai.pdf
-http://arxiv.org/pdf/1506.02075v1.pdf
-http://blog.acolyer.org/2015/11/27/hamt/
+    jint (JNICALL *AttachCurrentThreadAsDaemon)(JavaVM *vm, void **penv, void *args);
+};
 
+struct JavaVM_ {
+    const struct JNIInvokeInterface_ *functions;
 
-http://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-history-training/
-http://www.ruebenstrunk.de/emeocomp/content.HTM
-https://codewords.recurse.com/issues/five/why-do-neural-networks-think-a-panda-is-a-vulture
-http://blog.oup.com/2015/12/predictive-brains-sentient-robots/
-http://spectrum.ieee.org/biomedical/devices/dna-manufacturing-enters-the-age-of-mass-production
-http://artint.info/html/ArtInt.html
+    jint DestroyJavaVM() {
+        return functions->DestroyJavaVM(this);
+    }
+    jint AttachCurrentThread(void **penv, void *args) {
+        return functions->AttachCurrentThread(this, penv, args);
+    }
+    jint DetachCurrentThread() {
+        return functions->DetachCurrentThread(this);
+    }
 
-https://dsp.stackexchange.com/questions/27451/the-difference-between-convolution-and-cross-correlation-from-a-signal-analysis
+    jint GetEnv(void **penv, jint version) {
+        return functions->GetEnv(this, penv, version);
+    }
+    jint AttachCurrentThreadAsDaemon(void **penv, void *args) {
+        return functions->AttachCurrentThreadAsDaemon(this, penv, args);
+    }
+};
+*/
 
-https://news.ycombinator.com/item?id=10802351
-https://gist.github.com/nkurz/439ca1044e11181c1089
+		// jint JNICALL JNI_GetDefaultJavaVMInitArgs(void *args);
+		// public int JNI_GetDefaultJavaVMInitArgs(Pointer args);
 
-https://github.com/elemental/Elemental
-https://news.ycombinator.com/item?id=10799605
+		// jint JNICALL JNI_CreateJavaVM(JavaVM **pvm, void **penv, void *args);
+		// public int JNI_CreateJavaVM(Pointer pvm, Pointer penv, Pointer args);
 
+		// jint JNICALL JNI_GetCreatedJavaVMs(JavaVM **, jsize, jsize *);
+		public int JNI_GetCreatedJavaVMs(Pointer pmvs, @size_t int size, Pointer retSize);
 
+		// jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved);
+		// public int JNI_OnLoad(Pointer vm, Pointer reserved);
 
-http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/
-https://www.schneier.com/blog/archives/2016/01/replacing_judgm.html
-https://edge.org/conversation/jaron_lanier-the-myth-of-ai
-https://medium.com/the-opsee-blog/machine-learning-in-monitoring-is-bs-134e362faee2#.j2sfhb2av
+		// void JNICALL JNI_OnUnload(JavaVM *vm, void *reserved);
+		// public void JNI_OnUnload(Pointer vm, Pointer reserved);
+	}
 
+	public static interface AtExitLibC {
 
-https://news.ycombinator.com/item?id=10881683
-http://arxiv.org/pdf/1510.00149.pdf
-http://www.nextplatform.com/2015/12/08/emergent-chip-vastly-accelerates-deep-neural-networks/
-http://www.nextplatform.com/2015/11/20/convergence-coming-for-supercomputing-machine-learning/
-http://www.nextplatform.com/2015/09/07/the-black-box-problem-closes-in-on-neural-networks/
+		int atexit(Pointer function);
+	}
 
+	// pthreads
+	// public static interface
 
-http://muratbuffalo.blogspot.com/2016/01/paper-review-tensorflow-large-scale.html
-https://news.ycombinator.com/item?id=10882908
-
-
-http://saw.galois.com/tutorial.html
-
-
-https://mailman.cc.gatech.edu/pipermail/mlpack/2015-December/000706.html
-https://github.com/baidu-research/warp-ctc
-http://www.cell.com/current-biology/abstract/S0960-9822(05)00380-5?_returnURL=http%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982205003805%3Fshowall%3Dtrue&cc=y=
-
-
-http://erikbern.com/2016/01/21/analyzing-50k-fonts-using-deep-neural-networks/
-https://www.udacity.com/course/deep-learning--ud730
-http://togelius.blogspot.com/2016/01/why-video-games-are-essential-for.html
-
-
-https://www.cs.jhu.edu/~jason/tutorials/ml-simplex.html
-http://www.andreykurenkov.com/writing/organizing-my-emails-with-a-neural-net/
-http://themultidisciplinarian.com/2016/01/21/my-trouble-with-bayes/
-
-
-http://www.joshbarczak.com/blog/?p=1028
-
-
-http://www.lab41.org/some-tips-for-debugging-in-deep-learning-2/
-https://www.facebook.com/zuck/videos/vb.4/10102619979032811/
-http://nyuzi.org/
-
-
-http://www.azulsystems.com/sites/www.azulsystems.com/JVM_memory_Mgt.pdf
-https://www.cs.princeton.edu/picasso/mats/HotspotOverview.pdf
-http://gpuopen.com/welcometogpuopen/
-http://medicalxpress.com/news/2016-01-brain-channels.html
-https://github.com/Microsoft/CNTK
-http://www.botlibre.org/
-
-https://github.com/facebook/MemNN
-https://github.com/facebook/fbcunn
-https://github.com/facebook/SCRNNs
-https://github.com/facebook/Stack-RNN
-https://github.com/facebook/pose-aligned-deep-networks
-https://github.com/facebook/fbnn
-https://github.com/facebook/fbcuda
-
-http://blog.keras.io/how-convolutional-neural-networks-see-the-world.html
-http://research.microsoft.com/apps/video/default.aspx?id=259574&r=1
-https://github.com/caesar0301/awesome-public-datasets
-https://software.intel.com/en-us/articles/putting-your-data-and-code-in-order-optimization-and-memory-part-1
-http://www.inference.vc/deep-learning-is-easy/
-http://datagenetics.com/blog/january42016/index.html
-http://blog.stuffedcow.net/2015/08/pagewalk-coherence/
-
-http://www.falstad.com/circuit/ well this guy owns
-http://www.falstad.com/circuit/e-index.html
-http://max.io/articles/theories-on-artificial-expression/
-https://github.com/josephmisiti/awesome-machine-learning
-
-
-https://en.wikipedia.org/wiki/User:ClueBot_NG#Vandalism_Detection_Algorithm
-https://github.com/DamianZaremba/cluebotng/tree/master/src
-http://www.wildml.com/deep-learning-glossary/
-
-https://en.wikipedia.org/wiki/Amplifier#Class_AB
-http://www.dsplog.com/2008/03/29/comparing-16psk-vs-16qam-for-symbol-error-rate/
-https://medium.com/figma-design/introducing-vector-networks-3b877d2b864f#.4wlpvffkk
-http://www.amazon.com/gp/product/1558603433/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1558603433&linkCode=as2&tag=phoronix-20&linkId=PF6QETCLZX7FOC55
-
-https://www.technologyreview.com/s/600819/the-missing-link-of-artificial-intelligence/#/set/id/600832/
+	public static interface MyLibC {
+		public Pointer malloc(@size_t long size);
+		public int atexit(Pointer function);
+		public int __cxa_atexit(Pointer function, Pointer arg, Pointer dso_handle);
+	}
 
 
 
 
-
-
-https://github.com/biojava/biojava
-
-
-
-
-http://stevelosh.com/blog/2016/02/midpoint-displacement/
-https://en.wikipedia.org/wiki/Procedural_generation
-http://pcg.wikidot.com/
-https://www.reddit.com/r/proceduralgeneration/
+jnr.ffi.Runtime runtime = jnr.ffi.Runtime.getSystemRuntime();
+long ptrAddr = UnsafeUtils.UNSAFE.allocateMemory(1024);
+Pointer ptr = Pointer.wrap(runtime, ptrAddr);
+long szAddr = UnsafeUtils.UNSAFE.allocateMemory(8);
+Pointer sz = Pointer.wrap(runtime, szAddr);
+LibJava libJava = LibraryLoader.create(LibJava.class).load("java");
+int ret = libJava.JNI_GetCreatedJavaVMs(ptr, 1024, sz);
+System.out.println(ret);
+// static final jnr.ffi.Runtime runtime = Library.getRuntime(libc);
 
 
 
-https://iamtrask.github.io/2016/02/25/deepminds-neural-stack-machine/?i=4
-http://www.r-bloggers.com/is-deep-learning-a-markov-chain-in-disguise/
-
-
-http://arxiv.org/abs/1603.01417
-https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-core-concepts/
